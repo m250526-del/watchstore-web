@@ -6,10 +6,15 @@
 !plugins/
 !plugins/watchstore-payments/
 !plugins/watchstore-payments/**
+!mu-plugins/
+!mu-plugins/dynamic-siteurl.php
 
 **/node_modules/
 **/.env
 **/*.log
 **/*.zip
+**/*.sql
+**/*.pem
+**/*.key
 **/.DS_Store
 **/Thumbs.db
