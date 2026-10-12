@@ -1,0 +1,525 @@
+/*
+Theme Name: WatchStore
+Theme URI: 
+Description: Custom child theme for WatchStore with clean mobile-first WooCommerce checkout.
+Author: WatchStore
+Template: storefront
+Version: 1.1.0
+*/
+
+/* Reset & Base Checkout Container */
+.ws-checkout-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #111827;
+}
+
+.ws-checkout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Checkout Section Cards */
+.ws-checkout-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.ws-card-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+/* Form Controls & Full-Width Inputs */
+.ws-checkout-form input[type="text"],
+.ws-checkout-form input[type="email"],
+.ws-checkout-form input[type="tel"],
+.ws-checkout-form select,
+.ws-checkout-form textarea {
+    width: 100% !important;
+    padding: 12px 14px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    font-size: 15px !important;
+    color: #111827 !important;
+    background-color: #ffffff !important;
+    box-sizing: border-box !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ws-checkout-form input[type="text"]:focus,
+.ws-checkout-form input[type="email"]:focus,
+.ws-checkout-form input[type="tel"]:focus,
+.ws-checkout-form select:focus {
+    border-color: #111827 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(17, 24, 39, 0.1) !important;
+}
+
+.form-row {
+    margin-bottom: 16px !important;
+    width: 100% !important;
+    float: none !important;
+}
+
+.form-row label {
+    display: block !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin-bottom: 6px !important;
+    color: #374151 !important;
+}
+
+/* Option Cards (Shipping Method & Billing Address Selection) */
+.ws-option-cards-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ws-option-card {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.ws-option-card:hover {
+    border-color: #9ca3af;
+}
+
+.ws-option-card.active {
+    border: 2px solid #111827;
+    background-color: #f9fafb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.ws-radio-input {
+    margin-right: 14px !important;
+    width: 18px !important;
+    height: 18px !important;
+    accent-color: #111827;
+}
+
+.ws-option-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.ws-option-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.ws-option-desc {
+    font-size: 13px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+/* Order Summary – compact: thumbnails + total */
+.ws-summary-compact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.ws-summary-thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.ws-thumb-wrap {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    flex-shrink: 0;
+}
+
+.ws-thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ws-thumb-qty {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #111827;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ws-summary-total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111827;
+    white-space: nowrap;
+}
+
+/* Order Summary Table (hidden – replaced by compact view) */
+.ws-summary-table {
+    display: none;
+}
+
+/* Totals Breakdown */
+.ws-totals-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ws-total-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    color: #4b5563;
+}
+
+.ws-grand-total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111827;
+    padding-top: 12px;
+    border-top: 2px solid #e5e7eb;
+    margin-top: 4px;
+}
+
+/* Complete Order Button */
+.ws-complete-order-btn {
+    display: block !important;
+    width: 100% !important;
+    padding: 16px 24px !important;
+    background-color: #111827 !important;
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    border-radius: 8px !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.ws-complete-order-btn:hover {
+    background-color: #1f2937 !important;
+}
+
+/* Footer Policies Links */
+.ws-checkout-footer-policies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 24px 0 12px 0;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 12px;
+}
+
+.ws-checkout-footer-policies a {
+    font-size: 13px;
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.ws-checkout-footer-policies a:hover {
+    color: #111827;
+    text-decoration: underline;
+}
+
+/* Payment Section Styling */
+.ws-payment-info-card {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 12px;
+}
+
+.ws-payment-instruction-note {
+    font-size: 14px;
+    color: #92400e;
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.ws-pay-method-block {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 12px;
+}
+
+.ws-pay-method-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: #111827;
+}
+
+.ws-pay-method-sub {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0 0 10px 0;
+}
+
+.ws-pay-detail-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 6px 0;
+    border-top: 1px dashed #f3f4f6;
+}
+
+.ws-detail-label {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.ws-detail-val {
+    font-weight: 600;
+    color: #111827;
+}
+
+.pk-copy-btn {
+    background: #111827;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.pk-copy-btn:hover {
+    background: #374151;
+}
+
+.pk-copy-btn.copied {
+    background: #059669;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+    .ws-checkout-form {
+        padding: 8px;
+    }
+    
+    .ws-checkout-card {
+        padding: 16px;
+        border-radius: 10px;
+    }
+    
+    .ws-card-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* ── Collapsible Total Section (Section 7) ────────────────────────────────── */
+.ws-total-toggle-header {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    text-align: left;
+}
+
+.ws-total-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ws-total-accordion-title {
+    margin-bottom: 0 !important;
+}
+
+.ws-total-header-thumbs {
+    display: flex;
+    align-items: center;
+    padding-left: 4px;
+}
+
+.ws-total-stack-thumb {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    overflow: visible;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    margin-left: -10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.ws-total-stack-thumb:first-child {
+    margin-left: 0;
+}
+
+.ws-total-stack-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+}
+
+.ws-total-header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ws-total-header-grand {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.ws-total-chevron {
+    color: #6b7280;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+}
+
+.ws-total-toggle-header.open .ws-total-chevron {
+    transform: rotate(180deg);
+}
+
+.ws-total-expanded-body {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.ws-total-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px dashed #e5e7eb;
+}
+
+.ws-total-item-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ws-total-item-img {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    overflow: visible;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    flex-shrink: 0;
+}
+
+.ws-total-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+}
+
+.ws-total-item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.ws-total-item-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.3;
+}
+
+.ws-total-item-qty {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.ws-total-item-price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    white-space: nowrap;
+}
+
+@media (max-width:767px) {
+body .watchstore-mobile-top-bar{position:relative;top:auto;right:auto;bottom:auto;left:auto;border:0;box-shadow:none;background:transparent;z-index:20}
+body .watchstore-mobile-top-bar ul{display:flex;align-items:center;position:relative;height:56px;margin:0;padding:0 8px}
+body .watchstore-mobile-top-bar ul li{float:none;width:auto;flex:0 0 auto}
+body .watchstore-mobile-top-bar ul li>a{width:38px;height:56px;color:#111;background:transparent;border-right:0}
+body .watchstore-mobile-top-bar ul li>a::before{line-height:56px;font-size:1.25em}
+body .watchstore-mobile-top-bar ul li.ws-bar-menu{order:1}
+body .watchstore-mobile-top-bar ul li.ws-bar-menu>a::before{content:"\f0c9"}
+body .watchstore-mobile-top-bar ul li.search{order:2}
+body .watchstore-mobile-top-bar ul li.cart{order:5;margin-left:auto}
+body .watchstore-mobile-top-bar ul li.cart>a{overflow:visible}
+body .watchstore-mobile-top-bar ul li.cart .count{top:8px;left:auto;right:-2px;background:#111;color:#fff;border-color:#111}
+body .watchstore-mobile-top-bar ul li.ws-bar-logo{position:absolute;top:0;left:50%;height:56px;transform:translateX(-50%);display:flex;align-items:center}
+body .watchstore-mobile-top-bar ul li.ws-bar-logo>a{width:auto;height:auto;text-indent:0;overflow:visible;display:flex;align-items:center;font-weight:700;font-size:18px}
+body .watchstore-mobile-top-bar .ws-bar-logo img{height:32px;width:auto;max-width:none;display:block}
+body .watchstore-mobile-top-bar ul li.search .site-search{display:none;position:absolute;top:100%;bottom:auto;left:0;right:0;padding:12px 16px;background:#fff;box-shadow:0 6px 16px rgba(0,0,0,.12);z-index:30}
+body .watchstore-mobile-top-bar ul li.search.active .site-search{display:block;top:100%;bottom:auto}
+body .site-header,body .site-header>.col-full,body .storefront-primary-navigation,body .storefront-primary-navigation>.col-full,body .main-navigation{margin:0 !important;padding:0 !important;min-height:0 !important;border:0 !important;background:transparent !important}
+body .main-navigation.toggled{padding:8px 22px !important}
+body .site-header .site-branding,body .site-header .site-search,body .site-header button.menu-toggle{display:none}
+}
+.ws-page-heading{margin:8px 0 16px;font-size:22px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#111}
+body.home .entry-header{display:none}
+body.woocommerce-shop .woocommerce-products-header,body.tax-product_cat .woocommerce-products-header{display:none}

@@ -1,0 +1,15 @@
+*
+!.gitignore
+!themes/
+!themes/watchstore-theme/
+!themes/watchstore-theme/**
+!plugins/
+!plugins/watchstore-payments/
+!plugins/watchstore-payments/**
+
+**/node_modules/
+**/.env
+**/*.log
+**/*.zip
+**/.DS_Store
+**/Thumbs.db
